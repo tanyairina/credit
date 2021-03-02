@@ -1,20 +1,17 @@
 # Python3 program to implement
 # Luhn algorithm
-
 # Returns true if given card
 # number is valid
 def checkLuhn(cardNo):
-	
 	nDigits = len(cardNo)
 	nSum = 0
 	isSecond = False
 	
 	for i in range(nDigits - 1, -1, -1):
 		d = ord(cardNo[i]) - ord('0')
-	
+        
 		if (isSecond == True):
 			d = d * 2
-
 		# We add two digits to handle
 		# cases that make two digits after
 		# doubling
@@ -24,6 +21,18 @@ def checkLuhn(cardNo):
 		isSecond = not isSecond
 	
 	if (nSum % 10 == 0):
+		if (cardNo[0] == '4'):
+			print("VISA")
+	
+		if (cardNo[0] =='5'):
+			print("MasterCard")
+	
+		if (cardNo[0] =='3'):
+			print("AmericanExpress")
+
+		if (cardNo[0] =='6'):
+			print("Discover")
+
 		return True
 	else:
 		return False
@@ -31,20 +40,17 @@ def checkLuhn(cardNo):
 # Driver code 
 if __name__=="__main__":
 	
-	cardNo = "4222222222222"
-	
+	cardNo = "6011111111111117"
+    	
 	if (checkLuhn(cardNo)):
 		print("This is a valid card")
 	else:
 		print("This is not a valid card")
 
-# This code is contributed by rutvik_56
-
 # cardNo = "6176292929" invalid
 # American Epress: 378282246310005
 # American Express: 371449635398431
 # American Express Corporate: 378734493671000
-# Diners Club: 30569309025904
 # Discover: 6011111111111117
 # Discover: 6011000990139424
 # JCB: 3530111333300000
