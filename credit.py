@@ -21,14 +21,18 @@ def checkLuhn(cardNo):
 		isSecond = not isSecond
 	
 	if (nSum % 10 == 0):
-		if (cardNo[0] == '4'):
-			print("VISA")
 	
-		if (cardNo[0] =='5'):
+		if (cardNo[0] =='2'):
 			print("MasterCard")
 	
 		if (cardNo[0] =='3'):
 			print("AmericanExpress")
+
+		if (cardNo[0] == '4'):
+			print("VISA")
+		
+		if (cardNo[0] =='5'):
+			print("MasterCard")
 
 		if (cardNo[0] =='6'):
 			print("Discover")
@@ -40,12 +44,12 @@ def checkLuhn(cardNo):
 # Driver code 
 if __name__=="__main__":
 	
-	cardNo = "6011111111111117"
+	cardNo = "2221000000000009"
     	
 	if (checkLuhn(cardNo)):
-		print("This is a valid card")
+		print("VALID")
 	else:
-		print("This is not a valid card")
+		print("INVALID")
 
 # cardNo = "6176292929" invalid
 # American Epress: 378282246310005
@@ -53,8 +57,6 @@ if __name__=="__main__":
 # American Express Corporate: 378734493671000
 # Discover: 6011111111111117
 # Discover: 6011000990139424
-# JCB: 3530111333300000
-# JCB: 3566002020360505
 # MasterCard: 2221000000000009
 # MasterCard: 2223000048400011
 # MasterCard: 2223016768739313
